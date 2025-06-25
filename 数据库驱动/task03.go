@@ -29,4 +29,8 @@ func main() {
 	for _, emp := range employees {
 		fmt.Println(emp.ID, emp.Name, emp.Department, emp.Salary)
 	}
+
+	expenseEmp := Employee{}
+	db.Select(&expenseEmp, "Select * from employees where salary = (select max(Salary) from employees)")
+	fmt.Println("工资最高的员工信息："，expenseEmp)
 }
