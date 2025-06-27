@@ -1,4 +1,4 @@
-module PersonalBlog
+module Personal_Blog
 
 go 1.24.0
 
